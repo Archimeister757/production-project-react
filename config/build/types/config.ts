@@ -1,6 +1,6 @@
 import webpack from "webpack";
 
-export type BuildMode = webpack.Configuration['mode'];
+export type BuildMode = webpack.Configuration["mode"];
 
 export interface BuildPaths {
     entry: string;
