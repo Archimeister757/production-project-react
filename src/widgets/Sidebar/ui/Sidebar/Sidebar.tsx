@@ -25,7 +25,7 @@ export const Sidebar: FC<SidebarProps> = (props) => {
         type="button"
         onClick={onCollapsed}
       >
-        TOGGLE
+        {collapsed ? "Развернуть" : "Свернуть"}
       </button>
       <div className={cls.switchers}>
         <ThemeSwitcher />

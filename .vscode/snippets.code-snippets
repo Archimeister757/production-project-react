@@ -3,6 +3,7 @@
 	"Create custom react function component": {
 		"prefix": ["fc"],
 		"body": [
+      "import { FC } from 'react';",
 			"import { classNames } from 'shared/lib/classNames/classNames';",
 			"import cls from './${TM_FILENAME_BASE}.module.scss';",
 			"",
@@ -10,7 +11,7 @@
 			"\tclassName?: string;",
 			"}",
 			"",
-			"export const ${TM_FILENAME_BASE}: React.FC<${TM_FILENAME_BASE}Props> = (props) => {",
+			"export const ${TM_FILENAME_BASE}: FC<${TM_FILENAME_BASE}Props> = (props) => {",
 			"\tconst { className } = props;",
 			"",
 			"\treturn (",

@@ -35,5 +35,8 @@ module.exports = {
     "react/jsx-props-no-spreading": "off",
     "i18next/no-literal-string": ["error", { markupOnly: true }],
     "operator-linebreak": "off",
+    "object-curly-newline": "off",
+    "no-console": "off",
+    "import/order": ["warn"],
   },
 };
