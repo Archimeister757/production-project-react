@@ -2,18 +2,9 @@
  * For a detailed explanation regarding each configuration property and type check, visit:
  * https://jestjs.io/docs/configuration
  */
+import path from "path";
 
 export default {
-  // All imported modules in your tests should be mocked automatically
-  // automock: false,
-
-  // Stop running tests after `n` failures
-  // bail: 0,
-
-  // The directory where Jest should store its cached dependency information
-  // cacheDirectory: "C:\\Users\\Archimeister757\\AppData\\Local\\Temp\\jest",
-
-  // Automatically clear mock calls, instances and results before every test
   clearMocks: true,
   testEnvironment: "jsdom",
   coveragePathIgnorePatterns: [
@@ -27,14 +18,21 @@ export default {
     "json",
     "node",
   ],
-  moduleDirectories: [
-    "node_modules",
+  moduleDirectories: ["node_modules", "src"],
+  modulePaths: [
+    "<rootDir>src",
   ],
   testMatch: [
     // Обнаружил разницу между МАК ОС и ВИНДОУС!!!
     "<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)",
   ],
   rootDir: "../../",
+  setupFilesAfterEnv: ["<rootDir>/config/jest/setupTests.ts"],
+  moduleNameMapper: {
+    "\\.s?css$": "identity-obj-proxy",
+    "\\.svg": path.resolve(__dirname, "jestEmptyComponent.tsx"),
+    "@/(.*)": "<rootDir>/src/$1",
+  },
 
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
@@ -123,9 +121,6 @@ export default {
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
   // setupFiles: [],
-
-  // A list of paths to modules that run some code to configure or set up the testing framework before each test
-  // setupFilesAfterEnv: [],
 
   // The number of seconds after which a test is considered as slow and reported as such in the results.
   // slowTestThreshold: 5,
