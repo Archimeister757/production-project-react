@@ -22,15 +22,17 @@ export function buildPlugins({
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
     }),
-    new BundleAnalyzerPlugin({
-      analyzerMode: isAnalyze ? "server" : "disabled",
-    }),
   ];
 
-  // if (isDev) {
-  //     plugins.push(new ReactRefreshWebpackPlugin())
-  //     plugins.push(new webpack.HotModuleReplacementPlugin());
-  // }
+  if (isDev) {
+    // plugins.push(new ReactRefreshWebpackPlugin())
+    plugins.push(new webpack.HotModuleReplacementPlugin());
+    plugins.push(
+      new BundleAnalyzerPlugin({
+        analyzerMode: isAnalyze ? "server" : "disabled",
+      }),
+    );
+  }
 
   return plugins;
 }
