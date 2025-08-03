@@ -38,13 +38,13 @@ module.exports = {
     "object-curly-newline": "off",
     "no-console": "off",
     "import/order": ["warn"],
-    "overrides": [
-      {
-        files: ["**/scr/**/*.{ts, tsx}"],
-        rules: {
-          "i18next/no-literal-string": "off",
-        },
-      },
-    ],
   },
+  overrides: [
+    {
+      files: ["**/scr/**/*.{ts, tsx}"],
+      rules: {
+        "i18next/no-literal-string": "off",
+      },
+    },
+  ],
 };
