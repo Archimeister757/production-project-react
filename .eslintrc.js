@@ -41,6 +41,7 @@ module.exports = {
     "object-curly-newline": "off",
     "no-console": "off",
     "import/order": ["warn"],
+    "linebreak-style": ["error", "unix"],
   },
   overrides: [
     {
