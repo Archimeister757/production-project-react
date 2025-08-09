@@ -33,16 +33,18 @@ module.exports = {
     "import/no-extraneous-dependencies": "off",
     "import/extensions": "off",
     "react/jsx-props-no-spreading": "off",
-    "i18next/no-literal-string": ["error", { markupOnly: true }],
+    "i18next/no-literal-string": [
+      "error",
+      { markupOnly: true, ignoreAttribute: ["data-testid", "to"] },
+    ],
     "operator-linebreak": "off",
     "object-curly-newline": "off",
     "no-console": "off",
     "import/order": ["warn"],
-    "linebreak-style": ["error", "windows"],
   },
   overrides: [
     {
-      files: ["**/scr/**/*.{ts, tsx}"],
+      files: ["**/src/**/*.test.{ts,tsx}"],
       rules: {
         "i18next/no-literal-string": "off",
       },
