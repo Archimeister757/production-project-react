@@ -24,7 +24,7 @@ export const Primary: Story = {
     theme: AppLinkTheme.PRIMARY,
   },
 };
-export const Primary_dark_theme: Story = {
+export const PrimaryDarkTheme: Story = {
   args: {
     theme: AppLinkTheme.PRIMARY,
   },

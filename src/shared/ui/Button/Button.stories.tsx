@@ -24,7 +24,7 @@ export const Primary: Story = {
     themes: [ThemeButton.PRIMARY],
   },
 };
-export const Primary_theme_dark: Story = {
+export const PrimaryThemeDark: Story = {
   args: {
     themes: [ThemeButton.PRIMARY],
   },
@@ -45,7 +45,7 @@ export const Outline: Story = {
     themes: [ThemeButton.OUTLINE],
   },
 };
-export const Outline_theme_dark: Story = {
+export const OutlineThemeDark: Story = {
   args: {
     themes: [ThemeButton.OUTLINE],
   },
