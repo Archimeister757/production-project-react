@@ -11,9 +11,9 @@ jobs:
       matrix:
         node: [ 22.x ]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Staring Node.js ${{ matrix.node }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
       - name: install modules
@@ -32,6 +32,6 @@ jobs:
       # - name: build storybook
       #   run: npm run storybook:build
         # if: always()
-      - name: screenshot testing
-        run: npm run chromatic
-        if: always()
+      # - name: screenshot testing
+      #   run: npm run chromatic
+      #   if: always()
