@@ -46,7 +46,6 @@ export const Sidebar: FC<SidebarProps> = (props) => {
           <span className={cls.linkText}>{t("О сайте")}</span>
         </AppLink>
       </div>
-
       <div className={cls.switchers}>
         <ThemeSwitcher />
         <LangSwitcher
