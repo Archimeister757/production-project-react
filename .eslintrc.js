@@ -11,7 +11,7 @@ module.exports = {
     "airbnb",
     "plugin:i18next/recommended",
     "plugin:storybook/recommended",
-    "plugin:perfectionist/recommended-natural-legacy",
+    "plugin:react-hooks/recommended",
   ],
   overrides: [
     {
@@ -29,7 +29,7 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react", "@typescript-eslint", "i18next", "perfectionist"],
+  plugins: ["react", "@typescript-eslint", "i18next", "react-hooks"],
   rules: {
     "arrow-body-style": ["warn"],
     "i18next/no-literal-string": [
@@ -47,23 +47,26 @@ module.exports = {
     "no-unused-vars": "off", // TODO: настроить
     "object-curly-newline": "off",
     "operator-linebreak": "off",
-    "perfectionist/sort-imports": [
-      "warn",
-      {
-        order: "asc",
-        type: "natural",
-      },
-    ],
     "quotes": ["warn", "double"],
     "react/function-component-definition": "off",
+
     "react/jsx-filename-extension": [
       2,
       { extensions: [".js", ".jsx", ".ts", ".tsx"] },
     ],
+
     "react/jsx-indent": [1, 2],
+
     "react/jsx-props-no-spreading": "off",
+
     "react/react-in-jsx-scope": "off",
+
     "react/require-default-props": "off",
+
     "react/self-closing-comp": ["warn"],
+
+    "react-hooks/exhaustive-deps": "error",
+
+    "react-hooks/rules-of-hooks": "error",
   },
 };
