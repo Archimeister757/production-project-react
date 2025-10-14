@@ -48,25 +48,22 @@ module.exports = {
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quotes": ["warn", "double"],
-    "react/function-component-definition": "off",
 
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+
+    "react/function-component-definition": "off",
+    "react/jsx-one-expression-per-line": "off",
     "react/jsx-filename-extension": [
       2,
       { extensions: [".js", ".jsx", ".ts", ".tsx"] },
     ],
-
     "react/jsx-indent": [1, 2],
-
     "react/jsx-props-no-spreading": "off",
-
     "react/react-in-jsx-scope": "off",
-
     "react/require-default-props": "off",
-
     "react/self-closing-comp": ["warn"],
-
     "react-hooks/exhaustive-deps": "error",
-
     "react-hooks/rules-of-hooks": "error",
   },
 };
