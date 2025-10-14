@@ -22,5 +22,32 @@
 			"}",
 		],
 		"description": "Создать React-компонент по умолчанию. Импортируется scss-модуль и функция для работы c классами classNames."
+	},
+  "Create component story": {
+		"prefix": ["story"],
+		"body": [
+      "import type { Meta, StoryObj } from '@storybook/react-webpack5';",
+      "import { Theme } from 'app/providers/ThemeProvider';",
+      "import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';",
+			"import { ${TM_FILENAME_BASE} } from './${TM_FILENAME_BASE}'",
+			"",
+      "const meta = {",
+      "\ttitle: '/${TM_FILENAME_BASE}',",
+      "\tcomponent: ${TM_FILENAME_BASE},",
+      "\tparameters: {},",
+      "\ttags: ['autodocs'],",
+      "\targTypes: {},",
+      "\targs: {},",
+      "} satisfies Meta<typeof ${TM_FILENAME_BASE}>;",
+			"",
+			"export default meta;",
+      "type Story = StoryObj<typeof meta>;",
+			"",
+			"export const Light: Story = {};",
+      "export const Dark: Story = {",
+      "\tdecorators: [ThemeDecorator(Theme.DARK)],",
+      "};",
+		],
+		"description": "Создать React-компонент по умолчанию. Импортируется scss-модуль и функция для работы c классами classNames."
 	}
 }

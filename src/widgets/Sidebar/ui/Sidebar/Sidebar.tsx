@@ -5,10 +5,10 @@ import { LangSwitcher } from "widgets/LangSwitcher";
 import cls from "./Sidebar.module.scss";
 import { Button, ButtonSize, ButtonTheme } from "shared/ui/Button/Button";
 import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
-import { t } from "i18next";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
 import AboutIcon from "shared/assets/icons/house.svg";
 import MainIcon from "shared/assets/icons/list.svg";
+import { useTranslation } from "react-i18next";
 
 interface SidebarProps {
   className?: string;
@@ -16,6 +16,8 @@ interface SidebarProps {
 
 export const Sidebar: FC<SidebarProps> = (props) => {
   const { className } = props;
+
+  const { t } = useTranslation();
 
   const [collapsed, setCollapsed] = useState(false);
 
