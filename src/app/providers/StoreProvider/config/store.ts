@@ -7,6 +7,7 @@ export function createReduxStore(initialState?: StateSchema) {
     reducer: {
       counter: counterReducer,
     },
+    // eslint-disable-next-line no-undef
     devTools: __IS_DEV__,
     preloadedState: initialState,
   });

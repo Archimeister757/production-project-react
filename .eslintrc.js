@@ -45,6 +45,7 @@ module.exports = {
     "max-len": ["warn", { code: 80, ignoreComments: true, tabWidth: 2 }],
     "no-console": "off",
     "no-unused-vars": "off", // TODO: настроить
+    "no-param-reassign": "off",
     "object-curly-newline": "off",
     "operator-linebreak": "off",
     "quotes": ["warn", "double"],
