@@ -1,0 +1,13 @@
+.input {
+  width: 100%;
+
+  input {
+    outline: none;
+    padding-inline: 8px;
+    color: var(--primary-color);
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

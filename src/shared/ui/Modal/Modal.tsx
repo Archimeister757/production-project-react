@@ -1,5 +1,11 @@
 import { classNames } from "shared/lib/classNames/classNames";
-import React, { ReactNode, useCallback, useEffect, useRef, useState } from "react";
+import React, {
+  ReactNode,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { Portal } from "shared/ui/Portal/Portal";
 import { useTheme } from "app/providers/ThemeProvider";
 import cls from "./Modal.module.scss";
@@ -10,12 +16,21 @@ interface ModalProps {
   isOpen?: boolean;
   onClose?: () => void;
   teleportTo?: HTMLElement;
+  lazy?: boolean;
 }
 
 const ANIMATION_DELAY = 300;
 
 export const Modal = (props: ModalProps) => {
-  const { className, children, isOpen, onClose, teleportTo } = props;
+  const { className, children, isOpen, onClose, teleportTo, lazy } = props;
+
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsMounted(true);
+    }
+  }, [isOpen]);
 
   const [isClosing, setIsClosing] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout>>();
@@ -60,6 +75,10 @@ export const Modal = (props: ModalProps) => {
     [cls.isClosing]: isClosing,
     [cls[theme]]: true,
   };
+
+  if (lazy && !isMounted) {
+    return null;
+  }
 
   return (
     <Portal element={teleportTo}>
