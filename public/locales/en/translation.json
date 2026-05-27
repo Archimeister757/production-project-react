@@ -9,10 +9,13 @@
   "Главная": "Main",
   "О сайте": "About us",
   "Короткий язык": "En",
-  "Войти": "Sigh in",
+  "Войти": "Sign in",
+  "Выйти": "Sign out",
   "значение": "value",
   "Увеличить": "Increment",
   "Уменьшить": "Decrement",
   "Введите логин": "Enter login",
-  "Введите пароль": "Enter password"
+  "Введите пароль": "Enter password",
+  "Вы ввели неверный логин или пароль": "You entered an incorrect username or password",
+  "Форма авторизации": "Authorization form"
 }
