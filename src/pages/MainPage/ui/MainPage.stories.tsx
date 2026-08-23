@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-webpack5";
 import { Theme } from "app/providers/ThemeProvider";
+import { StoreDecorator } from "shared/config/storybook/StoreDecorator";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator";
 
 import MainPage from "./MainPage";
@@ -11,6 +12,11 @@ const meta = {
   tags: ["autodocs"],
   argTypes: {},
   args: {},
+  decorators: [
+    StoreDecorator({
+      counter: { value: 0 },
+    }),
+  ],
 } satisfies Meta<typeof MainPage>;
 
 export default meta;
