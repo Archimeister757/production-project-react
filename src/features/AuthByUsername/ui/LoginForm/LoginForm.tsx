@@ -1,11 +1,14 @@
 import { FC, memo, useCallback } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
-import cls from "./LoginForm.module.scss";
 import { useTranslation } from "react-i18next";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
 import { Input } from "shared/ui/Input/Input";
 import { Text, TextTheme } from "shared/ui/Text/Text";
 import { useDispatch, useSelector } from "react-redux";
+import {
+  DynamicModuleLoader,
+  ReducersList,
+} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { loginActions, loginReducer } from "../../model/slice/loginSlice";
 import { loginByUsername } from "../../model/services/loginByUsername/loginByUsername";
 import {
@@ -14,10 +17,7 @@ import {
   getLoginPassword,
   getLoginUsername,
 } from "../../model/selectors";
-import {
-  DynamicModuleLoader,
-  ReducersList,
-} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import cls from "./LoginForm.module.scss";
 
 export interface LoginFormProps {
   className?: string;
@@ -59,13 +59,13 @@ const LoginForm: FC<LoginFormProps> = memo((props) => {
       reducers={initialReducers}
       removeAfterUnmount
     >
-      <div className={classNames(cls.loginForm, {}, [className])}>
-        <Text title={t("Форма авторизации")}></Text>
+      <div className={classNames(cls.loginForm, {}, [className || ""])}>
+        <Text title={t("Форма авторизации")} />
         {error && (
           <Text
             theme={TextTheme.ERROR}
             text={t("Вы ввели неверный логин или пароль")}
-          ></Text>
+          />
         )}
         <Input
           autofocus

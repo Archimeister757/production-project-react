@@ -4,15 +4,14 @@ import { StateSchema, StoreProvider } from "app/providers/StoreProvider";
 import { loginReducer } from "features/AuthByUsername";
 
 const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
-  loginForm: loginReducer,
+  loginForm: loginReducer as ReducersMapObject<StateSchema>["loginForm"],
 };
 
 export const StoreDecorator =
   (
     state: DeepPartial<StateSchema>,
-    asyncReducers: DeepPartial<ReducersMapObject<StateSchema>>,
-  ) =>
-  (StoryComponent: StoryFn) => (
+    asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>,
+  ) => (StoryComponent: StoryFn) => (
     <StoreProvider
       initialState={state}
       asyncReducers={{ ...defaultAsyncReducers, ...asyncReducers }}

@@ -24,6 +24,8 @@ jobs:
       - name: build production project
         run: npm run build:prod
         if: always()
+      - name: Docker build
+        run: docker build -t my-react-app .
       - name: linting typescript
         run: npm run lint:ts
         if: always()

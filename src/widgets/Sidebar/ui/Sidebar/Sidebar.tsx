@@ -2,13 +2,13 @@ import { useState, FC } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { ThemeSwitcher } from "widgets/ThemeSwitcher";
 import { LangSwitcher } from "widgets/LangSwitcher";
-import cls from "./Sidebar.module.scss";
 import { Button, ButtonSize, ButtonTheme } from "shared/ui/Button/Button";
 import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
 import AboutIcon from "shared/assets/icons/house.svg";
 import MainIcon from "shared/assets/icons/list.svg";
 import { useTranslation } from "react-i18next";
+import cls from "./Sidebar.module.scss";
 
 interface SidebarProps {
   className?: string;

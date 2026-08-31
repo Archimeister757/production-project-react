@@ -1,4 +1,4 @@
-import { FC, InputHTMLAttributes, useEffect, useRef, useState } from "react";
+import React, { FC, InputHTMLAttributes, useEffect, useRef } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import cls from "./Input.module.scss";
 
@@ -37,7 +37,7 @@ export const Input: FC<InputProps> = (props) => {
   };
 
   return (
-    <div className={classNames(cls.input, {}, [className])}>
+    <div className={classNames(cls.input, {}, [className || ""])}>
       <input
         ref={inputRef}
         type={type}
