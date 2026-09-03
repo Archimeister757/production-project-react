@@ -43,6 +43,8 @@ module.exports = {
     "import/prefer-default-export": "off",
     "indent": [1, 2],
     "max-len": ["warn", { code: 80, ignoreComments: true, tabWidth: 2 }],
+    "no-multiple-empty-lines": ["warn", { max: 1, maxEOF: 0 }],
+    "arrow-parens": ["warn", "as-needed"],
     "no-console": "off",
     "no-unused-vars": "off", // TODO: настроить
     "no-param-reassign": "off",
@@ -66,5 +68,7 @@ module.exports = {
     "react/self-closing-comp": ["warn"],
     "react-hooks/exhaustive-deps": "error",
     "react-hooks/rules-of-hooks": "error",
+    "react/prop-types": ["warn"],
+    "react/jsx-no-useless-fragment": ["warn", { allowExpressions: true }],
   },
 };
