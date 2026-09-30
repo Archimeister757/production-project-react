@@ -54,11 +54,11 @@ jobs:
       - name: Build Docker image
         run: |
           docker build \
-            -t ghcr.io/archimeister757/my-react-app:latest \
+            -t ghcr.io/archimeister757/my-react-app:${{ github.sha }} \
             .
       - name: Push Docker image
         run: |
-          docker push ghcr.io/archimeister757/my-react-app:latest
+          docker push ghcr.io/archimeister757/my-react-app:${{ github.sha }}
       - name: Deploy to VPS
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
         uses: appleboy/ssh-action@v1
@@ -71,7 +71,7 @@ jobs:
               -u "${{ secrets.GHCR_USERNAME }}" \
               --password-stdin
 
-            docker pull ghcr.io/archimeister757/my-react-app:latest
+            docker pull ghcr.io/archimeister757/my-react-app:${{ github.sha }}
 
             docker stop my-react-app || true
             docker rm my-react-app || true
@@ -80,4 +80,4 @@ jobs:
               --name my-react-app \
               --restart unless-stopped \
               -p 80:80 \
-              ghcr.io/archimeister757/my-react-app:latest
+              ghcr.io/archimeister757/my-react-app:${{ github.sha }}
