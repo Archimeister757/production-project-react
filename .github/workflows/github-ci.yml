@@ -71,5 +71,5 @@ jobs:
               -u "${{ secrets.GHCR_USERNAME }}" \
               --password-stdin
             cd ~/app/my-react-app
-            docker compose pull
-            docker compose up -d
+            IMAGE_TAG=${{ github.sha }} docker compose pull
+            IMAGE_TAG=${{ github.sha }} docker compose up -d
